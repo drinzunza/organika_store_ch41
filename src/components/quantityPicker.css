@@ -1,0 +1,5 @@
+.quantityPicker label{
+    display: inline-block;
+    margin: 0 7px;
+    font-weight: 700;    
+}

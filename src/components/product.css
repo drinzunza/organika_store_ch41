@@ -1,0 +1,17 @@
+.product{
+    border: 1px solid black;
+    display: inline-block;
+    width: 250px;
+    height: 320px;
+    margin: 5px 7px;
+    border-radius: 5px;
+}
+
+.product img{
+    width: 200px; 
+    height : 200px;
+}
+
+.product:hover{
+    border-color: rgb(71, 117, 1);
+}
