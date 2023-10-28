@@ -43,10 +43,8 @@ function Catalog() {
   }
 
   return (
-    <div className="catalog">
-      <h1>Welcome to Organika the expensives store that you ever visit</h1>
-      <h2>We have {products.length} new products for you</h2>
-      <br />
+    <div className="catalog page">
+      <h1 className="title">Fersh products, always!</h1>
       <button onClick={clearFilters} className="btn btn-sm btn-dark">
         Clear
       </button>

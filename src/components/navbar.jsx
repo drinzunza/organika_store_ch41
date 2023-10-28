@@ -1,12 +1,18 @@
 import './navbar.css';
+import { Link } from 'react-router-dom';
+import DataContext from '../store/dataContext';
+import { useContext } from 'react';
 
 function Navbar() {
+  const user = useContext(DataContext).user;
+  const cart = useContext(DataContext).cart;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-body-primary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <Link className="navbar-brand" to="/">
+          Organika
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,56 +27,39 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/home">
                 Home
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
+              <Link className="nav-link active" aria-current="page" to="/catalog">
+                Catalog
+              </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
+
             <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
+              <Link className="nav-link active" aria-current="page" to="/about">
+                About us
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/admin">
+                Admin
+              </Link>
             </li>
           </ul>
+
           <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">
-              Search
+            <Link to="/cart" className="btn btn-outline-light">
+              {cart.length}
+              <i className="fa-solid fa-cart-shopping"></i>
+            </Link>
+
+            <button className="btn btn-outline-light ms-2">
+              {user.name}
+              <i className="fa-solid fa-gear ms-2"></i>
             </button>
           </form>
         </div>
@@ -80,4 +69,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

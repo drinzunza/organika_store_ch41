@@ -1,0 +1,37 @@
+.admin { 
+    text-align: left;
+}
+
+.admin .parent {
+    display: flex;
+    padding: 10px 30px;
+    justify-content: space-evenly;
+}
+
+.admin .products {
+   width: 400px;
+}
+
+.admin .codes {
+    width: 400px;   
+}
+
+.admin .form {
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+}
+
+.admin .form button {
+    margin-top: 15px;
+}
+
+.admin .form h4 {
+    text-align: center;
+    color: #485458;
+}
+
+.admin .form .control {
+    margin-bottom: 12px;
+}

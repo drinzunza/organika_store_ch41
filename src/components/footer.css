@@ -1,8 +1,10 @@
 .footer {
-    background-color: aquamarine;
+    color:white;
+    background-color: #839198;
+    padding: 10px 0 20px 0;
 }
 
 .footer label {
-    color: black;
-    text-decoration: underline;
+   font-weight: bold;
+   font-size: 14px;
 }
