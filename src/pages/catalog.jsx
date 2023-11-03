@@ -45,14 +45,15 @@ function Catalog() {
   return (
     <div className="catalog page">
       <h1 className="title">Fersh products, always!</h1>
-      <button onClick={clearFilters} className="btn btn-sm btn-dark">
-        Clear
+      <button onClick={clearFilters} className="btn btn-sm btn-outline-dark">
+        All
       </button>
+
       {categories.map((arrowCategories) => (
         <button
           key={arrowCategories}
           onClick={() => filter(arrowCategories)}
-          className="btn btn-sm btn-primary btn-filter"
+          className="btn btn-sm btn-outline-success btn-filter"
         >
           {arrowCategories}
         </button>

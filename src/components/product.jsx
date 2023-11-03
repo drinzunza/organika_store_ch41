@@ -17,20 +17,31 @@ function Product(props) {
     addToCart(prodCart);
   }
 
+  function getTotal() {
+    let total = props.data.price * quantity;
+    return total.toFixed(2);
+  }
+
   return (
     <div className="product">
       <img src={'/images/' + props.data.image} alt="placeholder" />
       <h5>{props.data.title}</h5>
       <div className="prices">
-        <label>Price: {props.data.price.toFixed(2)}</label>
-        <label>Total: {props.data.price * quantity} </label>
+        <label>
+          Price: <span>{props.data.price.toFixed(2)}</span>
+        </label>
+        <label className="total">
+          Total: <span>{getTotal()} </span>
+        </label>
       </div>
 
-      <QuantityPicker onChange={onQuantityChange} />
+      <div className="controls">
+        <QuantityPicker onChange={onQuantityChange} />
 
-      <button onClick={handleAdd} className="btn btn-sm btn-outline-success">
-        <i className="fa-solid fa-cart-plus"></i>
-      </button>
+        <button onClick={handleAdd} className="btn btn-sm btn-outline-success">
+          <i className="fa-solid fa-cart-plus"></i>
+        </button>
+      </div>
     </div>
   );
 }

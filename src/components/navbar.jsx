@@ -7,6 +7,17 @@ function Navbar() {
   const user = useContext(DataContext).user;
   const cart = useContext(DataContext).cart;
 
+  function getCount() {
+    let sum = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+      const prod = cart[i];
+      sum += prod.quantity;
+    }
+
+    return sum;
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-body-primary">
       <div className="container-fluid">
@@ -53,11 +64,11 @@ function Navbar() {
 
           <form className="d-flex" role="search">
             <Link to="/cart" className="btn btn-outline-light">
-              {cart.length}
+              {getCount()}
               <i className="fa-solid fa-cart-shopping"></i>
             </Link>
 
-            <button className="btn btn-outline-light ms-2">
+            <button type="button" className="btn btn-outline-light ms-2">
               {user.name}
               <i className="fa-solid fa-gear ms-2"></i>
             </button>

@@ -7,7 +7,20 @@ function GlobalProvider(props) {
 
   function addToCart(product) {
     let copy = [...cart];
-    copy.push(product);
+
+    let found = false;
+    for (let i = 0; i < cart.length; i++) {
+      const item = cart[i];
+      if (item._id === product._id) {
+        found = true;
+        item.quantity += product.quantity;
+      }
+    }
+
+    if (!found) {
+      copy.push(product);
+    }
+    
     setCart(copy);
   }
 

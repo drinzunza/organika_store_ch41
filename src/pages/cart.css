@@ -1,0 +1,23 @@
+.cart .parent {
+    display: flex;
+}
+
+.cart .list {
+    margin: 5px 30px;
+    flex: 3;
+}
+
+.cart aside {
+    flex:1;
+    background-color: #fcfcfc;
+    border: 1px solid #b2b2b2;
+    border-radius: 4px;    
+    padding: 12px 20px;
+    margin: 0 20px;
+}
+
+.cart aside .btn-pay {
+    width: 120px;
+}
+
+
